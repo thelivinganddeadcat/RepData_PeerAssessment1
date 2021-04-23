@@ -5,7 +5,6 @@ output:
   html_document: 
     keep_md: yes
     number_sections: yes
-    
 ---
 
 # Loading and preprocessing the data
@@ -87,8 +86,6 @@ weekend = function(x){
         return('Weekday')
 }
 activity$weekday.type = as.factor(apply(as.matrix(activity$dayname), 1, weekend))
-
-# activity$weekday.type<-weekdays(as.Date(activity$time))
 ```
 
 # Histogram of total number of steps taken each day
@@ -100,7 +97,7 @@ steps.day <- aggregate(activity$steps, by=list(Day = activity$date), FUN = sum, 
 qplot(steps.day$x, binwidth = 1000, fill=I("blue"),col=I("red"),ylab = "frequency", xlab = "Total number of steps each day")
 ```
 
-![](PA1_template_files/figure-html/plot histogram-1.png)<!-- -->
+![](PA1_template_files/figure-html/plot_histogram-1.png)<!-- -->
 
 
 # What is mean total number of steps taken per day?
@@ -134,7 +131,7 @@ ggplot(data=avg.steps.interval, aes(x=interval,y=x)) +
   labs(title="avg. steps for the given interval")
 ```
 
-![](https://github.com/thelivinganddeadcat/RepData_PeerAssessment1/tree/master/PA1_template_files/figure_html/plot of average daily pattern-1.png)<!-- -->
+![](PA1_template_files/figure-html/plot_of_average_daily_pattern-1.png)<!-- -->
 
 # The 5-minute interval that, on average, contains the maximum number of steps
 
@@ -172,7 +169,7 @@ activity.NA <-
 qplot(activity.NA$interval, binwidth = 100, fill=I("blue"),col=I("red"),ylab = "frequency", xlab = "Total number of interval with no steps = NA")
 ```
 
-![](PA1_template_files/figure-html/distribution over the day of missing values-1.png)<!-- -->
+![](PA1_template_files/figure-html/distribution_over_the_day_of_missing_values-1.png)<!-- -->
 
 The histogram shows that the distribution is almost identical over all, therefore we could utilizing the average of the value for that interval over all days.
 
@@ -197,7 +194,7 @@ steps.day <- aggregate(NoNA.activity$steps, by=list(Day = activity$date), FUN = 
 qplot(steps.day$x, binwidth = 1000, fill=I("blue"),col=I("red"),ylab = "frequency", xlab = "Total number of steps each day")
 ```
 
-![](PA1_template_files/figure-html/histogram with substituted values-1.png)<!-- -->
+![](PA1_template_files/figure-html/histogram_with_substituted_values-1.png)<!-- -->
 
 ```r
 steps.mean <- round(mean(steps.day$x, na.rm = T),2)
@@ -237,4 +234,4 @@ labs(x= "intervals")
 print(y)
 ```
 
-![](PA1_template_files/figure-html/weekend vs weekday-1.png)<!-- -->
+![](PA1_template_files/figure-html/weekend_vs_weekday-1.png)<!-- -->

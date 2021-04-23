@@ -465,9 +465,7 @@ weekend = function(x){
         
         return(&#39;Weekday&#39;)
 }
-activity$weekday.type = as.factor(apply(as.matrix(activity$dayname), 1, weekend))
-
-# activity$weekday.type&lt;-weekdays(as.Date(activity$time))</code></pre>
+activity$weekday.type = as.factor(apply(as.matrix(activity$dayname), 1, weekend))</code></pre>
 </div>
 </div>
 <div id="histogram-of-total-number-of-steps-taken-each-day" class="section level1">
