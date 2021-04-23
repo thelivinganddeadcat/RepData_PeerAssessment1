@@ -1,10 +1,11 @@
 ---
-author: Angelo Mathis 
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
-    number_sections: true
+title: 'Reproducible Research: Peer Assessment 1'
+author: "Angelo Mathis"
+output:
+  html_document: 
+    keep_md: yes
+    number_sections: yes
+  pdf_document: default
 ---
 
 
@@ -101,8 +102,6 @@ qplot(steps.day$x, binwidth = 1000, fill=I("blue"),col=I("red"),ylab = "frequenc
 ```
 
 ![](PA1_template_files/figure-html/plot histogram-1.png)<!-- -->
-
-missing.intervals <- 
 
 
 # What is mean total number of steps taken per day?
