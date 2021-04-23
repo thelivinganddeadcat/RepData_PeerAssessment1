@@ -134,7 +134,7 @@ ggplot(data=avg.steps.interval, aes(x=interval,y=x)) +
   labs(title="avg. steps for the given interval")
 ```
 
-![](PA1_template_files/figure-html/plot of average daily pattern-1.png)<!-- -->
+![](https://github.com/thelivinganddeadcat/RepData_PeerAssessment1/tree/master/PA1_template_files/figure_html/plot of average daily pattern-1.png)<!-- -->
 
 # The 5-minute interval that, on average, contains the maximum number of steps
 
