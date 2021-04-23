@@ -544,6 +544,9 @@ steps.median &lt;- median(steps.day$x, na.rm = T)</code></pre>
 </div>
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level1">
 <h1><span class="header-section-number">8</span> Are there differences in activity patterns between weekdays and weekends?</h1>
+</div>
+<div id="prepare-the-data-for" class="section level1">
+<h1><span class="header-section-number">9</span> Prepare the data for</h1>
 <p>We first need to calculate the average per interval for the weekdays separated from the weekend days</p>
 <pre class="r"><code>avg.steps.interval.weekday &lt;- aggregate(activity$steps, by=list(interval=activity$interval,weekday.type=activity$weekday.type), FUN=mean, na.rm=TRUE)
 
@@ -556,6 +559,9 @@ for (index in 1:nrow(NoNA.activity.weekday)) {
   NoNA.activity.weekday$steps2[index]&lt;-NoNA.activity.weekday[index,&quot;steps&quot;]
   }
 }</code></pre>
+</div>
+<div id="plot-the-grafics" class="section level1">
+<h1><span class="header-section-number">10</span> Plot the grafics</h1>
 <p>Plot two curves showing the numer of average steps per interval, one each for “Weekday” or “Weekend” for the modified dataset</p>
 <pre class="r"><code>y&lt;-ggplot(data=NoNA.activity.weekday, aes(x=interval, y=steps2, group=weekday.type)) + geom_line(aes(color=weekday.type))+ facet_wrap(~ weekday.type, nrow=2) + ylab(&quot;number of steps&quot;) + labs(title=&quot;steps weekdays vs weekends&quot;) +
 labs(x= &quot;intervals&quot;) 

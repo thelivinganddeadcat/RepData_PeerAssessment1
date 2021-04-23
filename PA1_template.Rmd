@@ -182,7 +182,7 @@ for (index in 1:nrow(NoNA.activity.weekday)) {
 # Plot the grafics
 
 Plot two curves showing the numer of average steps per interval, one each for  "Weekday" or "Weekend" for the modified dataset
-```{r weekend vs weetail, echo=TRUE}
+```{r weekend vs weekday, echo=TRUE}
 y<-ggplot(data=NoNA.activity.weekday, aes(x=interval, y=steps2, group=weekday.type)) + geom_line(aes(color=weekday.type))+ facet_wrap(~ weekday.type, nrow=2) + ylab("number of steps") + labs(title="steps weekdays vs weekends") +
 labs(x= "intervals") 
 print(y)

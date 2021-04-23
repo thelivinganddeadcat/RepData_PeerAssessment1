@@ -210,6 +210,7 @@ The mean is 1.076619\times 10^{4} and remains unchanged, while the median change
 
 # Are there differences in activity patterns between weekdays and weekends?
 
+# Prepare the data for 
 We first need to calculate the average per interval for the weekdays separated from the weekend days
 
 
@@ -228,7 +229,7 @@ for (index in 1:nrow(NoNA.activity.weekday)) {
 }
 ```
 
-
+# Plot the grafics
 
 Plot two curves showing the numer of average steps per interval, one each for  "Weekday" or "Weekend" for the modified dataset
 
@@ -238,4 +239,4 @@ labs(x= "intervals")
 print(y)
 ```
 
-![](PA1_template_files/figure-html/weekend vs weetail-1.png)<!-- -->
+![](PA1_template_files/figure-html/weekend vs weekday-1.png)<!-- -->
