@@ -8,7 +8,6 @@ output:
     
 ---
 
-
 # Loading and preprocessing the data
 
 ## load libraries
